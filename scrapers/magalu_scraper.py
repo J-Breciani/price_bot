@@ -1,7 +1,7 @@
 from scraper_base import LojaScraper
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import time
+from time import sleep
 
 class MagaluScraper(LojaScraper):
     
@@ -9,7 +9,7 @@ class MagaluScraper(LojaScraper):
         self.driver.get('https://www.magazineluiza.com.br/')
         campo_busca = self.driver.find_element(By.XPATH, '//div[@id= "search-container"]')
         campo_busca.send_keys(produto, Keys.RETURN)
-        time.sleep(2)
+        sleep(2)
         
         try:
             titulo = self.driver.find_element(By.XPATH, '//h2[@data-testid="product-title"]')
