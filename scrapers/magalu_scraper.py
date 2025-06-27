@@ -17,4 +17,4 @@ class MagaluScraper(LojaScraper):
             link = self.driver.find_element(By.XPATH, '//h2[@data-testid="product-card-container"]')
             return {"loja": "Magalu", "titulo": titulo, "preco": preco, "link": link}
         except Exception as e:
-            return {"loja": "Magalu", "erro": str(e)}
+            return {"loja": "Magalu", "erro": str(e)} 
